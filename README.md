@@ -32,7 +32,14 @@ Front-end:
 Banco de dados:
 	Será utilizado o sistema de gerenciamento MySQL, devido à sua segurança, confiabilidade e excelente desempenho. 
 
-Referências
+Integrantes:
+Hugo Aguiar de Mendonça
+João Pedro Gonçales Passarini
+Miguel Dezuan Ferraccioli
+Wagner de Mello e Castro
+Yasmin Santos Silva Santiago
+
+Referências:
 NAHAS, M. V. A era do estilo de vida. In: NAHAS, M. V. Atividade física, saúde e qualidade de vida: conceitos e sugestões para um estilo de vida ativo. 7. ed. Florianópolis: Ed. do Autor, 2017. p. 15-36.
 NAHAS, M. V.; BARROS, M. V. G.; FRANCALACCI, V. L. O pentáculo do bem-estar: base conceitual para avaliação do estilo de vida de indivíduos ou grupos. Revista Brasileira de Atividade Física e Saúde, Florianópolis, v. 5, n. 2, p. 48-59, 2000.
 
