@@ -18,44 +18,128 @@
         </p>
     </header>
 
-    <main>
+<!--ALTERAÇÃO:
+Antes todas as perguntas eram exibidas em uma única tela.
+Pensei em dividir o questionário em etapas, para não ficar muita informação de uma só vez para o usuário. -->
 
-        <section class="intro">
-            <h2>Avaliação de Saúde e Bem-Estar</h2>
+<main>
 
-            <p>
-                Responda às perguntas abaixo para gerar seu
-                perfil comportamental e visualizar seus resultados.
-            </p>
+<!--TELA INICIAL:
+Quis criar uma tela inicial que simulasse um fluxo de login/identificação do usuário.
+Torna a aplicação mais intuitiva e organizada e não precisa alterar o backend. -->
 
-            <label for="idUsuario">
-                ID do Usuário
-            </label>
+    <section id="telaInicial" class="card">
 
-            <input
-                type="number"
-                id="idUsuario"
-                placeholder="Digite seu ID">
-        </section>
+        <h2>Avaliação do Estilo de Vida</h2>
 
-        <form id="questionario">
+        <p>
+            Responda ao questionário PEVI para receber
+            uma análise do seu perfil de saúde e bem-estar.
+        </p>
 
-            <div id="perguntas-container"></div>
+        <input
+            type="text"
+            id="nome"
+            placeholder="Nome completo">
 
-            <div class="botao-container">
-                <button type="button" id="enviarBtn">
-                    Gerar Feedback
-                </button>
-            </div>
+        <input
+            type="email"
+            id="email"
+            placeholder="E-mail">
 
-        </form>
+        <input
+            type="number"
+            id="idUsuario"
+            placeholder="ID do usuário">
 
-        <section id="resultado"></section>
+        <button id="iniciarBtn">
+            Iniciar Avaliação
+        </button>
 
-    </main>
+    </section>
 
+   <!--QUESTIONÁRIO: 
+   Separei por categorias do PEVI -->
+ 
+    <section
+        id="telaQuestionario"
+        class="card"
+        style="display:none;">
+
+        <div class="cabecalho-etapa">
+
+            <h2 id="tituloCategoria"></h2>
+
+            <!--
+            Exibe a etapa atual.
+
+            Exemplo:
+            Etapa 2 de 5
+            -->
+            <span id="contadorEtapa"></span>
+
+        </div>
+
+        <!--
+        Barra de progresso para permitir que o usuário acompanhe visualmente o avanço do questionário.
+        -->
+        <div class="progresso">
+
+            <div id="barra"></div>
+
+        </div>
+
+
+        <div id="perguntasEtapa"></div>
+
+            <div class="acoes">
+
+            <button
+                type="button"
+                id="voltarBtn">
+
+                ← Voltar
+
+            </button>
+
+            <button
+                type="button"
+                id="proximoBtn">
+
+                Próximo →
+
+            </button>
+
+        </div>
+
+    </section>
+
+<!--TELA DE RESULTADOS: 
+Separação da visualização do gráfico em uma tela exclusiva. -->
+
+    <section
+        id="resultado"
+        class="card"
+        style="display:none;">
+
+        <h2>
+            Resultado da Avaliação
+        </h2>
+
+        <div id="graficoContainer"></div>
+
+        <button
+            id="reiniciarBtn"
+            type="button">
+
+            Fazer Nova Avaliação
+
+        </button>
+
+    </section>
+
+</main>
     <script src="app.js"></script>
 
 </body>
-
 </html>

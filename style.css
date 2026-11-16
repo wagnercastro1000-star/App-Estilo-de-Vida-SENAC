@@ -1,3 +1,9 @@
+
+/*
+Ajustes da nova tela inicial.
+A tela passou a funcionar como ponto de entrada
+para o questionário organizado por etapas.
+*/
 :root {
     --verde-escuro: #5A7931;
     --verde-principal: #91B141;
@@ -140,4 +146,19 @@ button:hover {
     color: var(--verde-principal);
     border-bottom: 2px solid var(--bege);
     padding-bottom: 8px;
+}
+
+#telaInicial input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 15px;
+
+    font-size: 16px;
+
+    border: 2px solid var(--bege);
+    border-radius: 12px;
+
+    background: white;
+
+    transition: 0.3s;
 }
