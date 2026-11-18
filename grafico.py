@@ -179,6 +179,36 @@ def gerar_svg(respostas):
         />
     """)
 
+# 7. Textos das categorias nas pontas da estrela
+    raio_texto = 240 # Aumentamos o raio para o texto ficar na parte mais larga da ponta
+
+    textos = [
+        (-90, ["Alimentação"]),
+        (-18, ["Atividade", "física"]),
+        (54, ["Comportamento", "Preventivo"]),
+        (126, ["Relacionamentos"]),
+        (198, ["Controle do", "estresse"])
+    ]
+
+    for angulo, linhas in textos:
+        
+        x, y = coordenadas(cx, cy, raio_texto, angulo)
+        
+        # O segredo é o paint-order="stroke" com stroke="white" e stroke-width="6"
+        # Isso cria a borda branca atrás da fonte que esconde a linha preta!
+        svg.append(f'''
+        <text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#333" text-anchor="middle" paint-order="stroke" stroke="white" stroke-width="6" stroke-linejoin="round">
+        ''')
+        
+        for idx, linha in enumerate(linhas):
+            # Pequeno ajuste matemático para centralizar melhor 1 ou 2 linhas
+            dy = 5 if idx == 0 else 18 
+            svg.append(f'''
+            <tspan x="{x}" dy="{dy}">{linha}</tspan>
+            ''')
+            
+        svg.append('</text>')
+
     svg.append("</svg>")
 
     return "".join(svg)
